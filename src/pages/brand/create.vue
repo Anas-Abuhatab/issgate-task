@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="content">
     <h1>Create Brand</h1>
 
     <form @submit.prevent="formSubmit()" class="container__box-form">
@@ -93,7 +93,7 @@ const formSubmit = () => {
         router.push({ name: "brand" });
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
   } else {
     isValid.value = false;
@@ -161,6 +161,9 @@ const formSubmit = () => {
   width: 90%;
   margin: 1rem;
   margin-top: 0;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
 }
 
 .container__box-form--lable {

@@ -13,6 +13,18 @@ class Brand {
         });
     });
   }
+  static async view(id) {
+    return new Promise(async (response, rej) => {
+      await axios
+        .get(`/api/Brand/${id}`)
+        .then((res) => {
+          response(res);
+        })
+        .catch((error) => {
+          rej(error);
+        });
+    });
+  }
   static async delete(id) {
     return new Promise(async (response, rej) => {
       await axios
@@ -53,6 +65,19 @@ class Brand {
     return new Promise(async (response, rej) => {
       await axios
         .post(`/api/Brand`,data)
+        .then((res) => {
+          response(res);
+        })
+        .catch((error) => {
+          rej(error);
+        });
+    });
+  }
+
+  static async update(data,id) {
+    return new Promise(async (response, rej) => {
+      await axios
+        .put(`/api/Brand?BrandId=${id}`,data)
         .then((res) => {
           response(res);
         })

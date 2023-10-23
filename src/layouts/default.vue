@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header></Header>
-    <router-view class="content"></router-view>
+      <router-view ></router-view>
     <Footer></Footer>
   </div>
 </template>
@@ -12,6 +12,3 @@ import Footer from "../components/Footer.vue";
 
 
 </script>
-
-<style scoped>
-</style>

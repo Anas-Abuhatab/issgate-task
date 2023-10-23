@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="content">
     <div class="head">
       <router-link class="head-btn" to="/brand/create">Add New +</router-link>
     </div>
@@ -38,79 +38,84 @@
             </label>
           </td>
           <td>
-            <div>
-              <span>
-                <div class="table-actions">
-                  <!-- view -->
-                  <button>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      width="24"
-                      height="24"
-                      class="inline-block"
-                      role="presentation"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                      ></path>
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                      ></path>
-                    </svg>
-                  </button>
+            <div class="table-actions">
+              <!-- view -->
+              <router-link
+                class="table-actions--btn"
+                :to="`/brand/${brand.id}`"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  width="24"
+                  height="24"
+                  class="inline-block"
+                  role="presentation"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                  ></path>
+                </svg>
+              </router-link>
 
-                  <!-- edit -->
-                  <button>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      width="24"
-                      height="24"
-                      class="inline-block"
-                      role="presentation"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-                      ></path>
-                    </svg>
-                  </button>
+              <!-- edit -->
+              <router-link
+                class="table-actions--btn"
+                :to="`/brand/update?id=${brand.id}`"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  width="24"
+                  height="24"
+                  class="inline-block"
+                  role="presentation"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                  ></path>
+                </svg>
+              </router-link>
 
-                  <!-- delete -->
-                  <button @click="handleDeleteCard(brand)">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      width="24"
-                      height="24"
-                      class="inline-block"
-                      role="presentation"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-              </span>
+              <!-- delete -->
+              <button
+                class="table-actions--btn"
+                @click="handleDeleteCard(brand)"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  width="24"
+                  height="24"
+                  class="inline-block"
+                  role="presentation"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                  ></path>
+                </svg>
+              </button>
             </div>
           </td>
         </tr>
@@ -196,7 +201,6 @@ const updateBrandList = (mode, myBrand) => {
       tableData.value = tableData.value.filter((ele) => ele.id !== myBrand.id);
       break;
     case "ChangeStatus":
-      // let target = [...tableData.value].filter((ele) => ele.id === myBrand.id);
       const index = tableData.value.findIndex((brand) => {
         return brand.id === myBrand.id;
       });
@@ -217,15 +221,21 @@ watch(
 );
 </script>
 
+<style>
+.content {
+  min-height: calc(100vh - 90.88px - 75px);
+}
+</style>
+
 <style scoped>
-.head{
+.head {
   width: 100%;
   text-align: right;
 }
 
-.head-btn{
-  display: block;
-  margin:  4rem 4rem 0 0;
+.head-btn {
+  display: inline-block;
+  margin: 4rem 4rem 0 0;
   padding: 1rem;
 }
 
@@ -247,7 +257,6 @@ th {
 .table-actions {
   display: flex;
   justify-content: space-between;
-  align-content: center;
   align-items: center;
 }
 
@@ -330,5 +339,19 @@ input:checked + .slider:before {
 }
 .table-footer > div:nth-child(1) > select {
   padding: 0.5rem;
+}
+
+.table-actions--btn {
+  margin: 0 0.5rem;
+}
+
+@media only screen and (max-width:500px) {
+  .table-actions {
+    flex-direction: column;
+  }
+
+  .table-actions--btn {
+  margin: 0.5rem 0;
+}
 }
 </style>
