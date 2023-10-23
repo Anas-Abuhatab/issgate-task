@@ -100,7 +100,7 @@ const handleChangeStatus = () => {
   border-radius: 1vw;
   width: 400px;
   max-width: 90%;
-  max-height: fit-content;
+  max-height: 12rem;
   z-index: 2;
   position: fixed;
   right: 0;
